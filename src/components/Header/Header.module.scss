@@ -12,6 +12,17 @@
   -moz-box-shadow: 0px 16px 35px -44px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 16px 35px -44px rgba(0, 0, 0, 0.75);
 
+  .wrapper_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .svg_icons {
+    margin-left: 10px;
+  }
+
   .content_wrap {
     display: flex;
     align-items: center;

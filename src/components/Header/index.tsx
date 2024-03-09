@@ -16,10 +16,10 @@ const Header: React.FC = () => {
       <div className="wrapper-logo">
         <img src={logo} alt="logo" />
       </div>
-      <div className="wrapper-info">
-        <img src={lupa} alt="lupa" />
-        <img src={favorite} alt="favorite" />
-        <img src={cart} alt="cart" />
+      <div className={styles.wrapper_info}>
+        <img className={styles.svg_icons} src={lupa} alt="lupa" />
+        <img className={styles.svg_icons} src={favorite} alt="favorite" />
+        <img className={styles.svg_icons} src={cart} alt="cart" />
       </div>
     </div>
   );
