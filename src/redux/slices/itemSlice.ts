@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 type Product = {
   id: number;
   title: string;
-  price: number;
+  price: string;
   description: string;
   category: string;
   image: string;
@@ -45,13 +45,13 @@ export const fetchProducts = createAsyncThunk<
 
 // Определение начального состояния
 interface ProductState {
-  products: Product[]; // Изменено на массив продуктов
+  products: Product[];
   loading: boolean;
   error: ApiError | null;
 }
 
 const initialState: ProductState = {
-  products: [], // Изменено на пустой массив
+  products: [],
   loading: false,
   error: null,
 };
@@ -69,9 +69,8 @@ const productSlice = createSlice({
     builder.addCase(
       fetchProducts.fulfilled,
       (state, action: PayloadAction<Product[]>) => {
-        // Изменено на PayloadAction<Product[]>
         state.loading = false;
-        state.products = action.payload; // Изменено на products
+        state.products = action.payload;
       }
     );
     builder.addCase(

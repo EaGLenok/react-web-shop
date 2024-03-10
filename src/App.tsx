@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemPage from "./components/ItemPage";
 
 function App() {
   return (
@@ -8,7 +10,10 @@ function App() {
       <div className="wrapper">
         <Header />
         <div className="content">
-          <Home />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/fullItem/:id" element={<ItemPage />} />
+          </Routes>
         </div>
       </div>
     </div>

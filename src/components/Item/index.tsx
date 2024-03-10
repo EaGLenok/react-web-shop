@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Item.module.scss";
 
 interface Items {
   id: number;
@@ -6,22 +7,25 @@ interface Items {
   category: string;
   description: string;
   image: string;
+  price: string;
 }
-const Item: React.FC<Items> = ({ id, title, category, description, image }) => {
-  console.log(id);
+const Item: React.FC<Items> = ({
+  id,
+  title,
+  category,
+  description,
+  image,
+  price,
+}) => {
   return (
-    <div style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}>
-      <h2>{title}</h2>
-      <img src={image} alt={title} style={{ width: "100%", height: "auto" }} />
-      <p>
-        <strong>Category:</strong> {category}
-      </p>
-      <p>
-        <strong>Description:</strong> {description}
-      </p>
-      <p>
-        <small>ID: {id}</small>
-      </p>
+    <div className={styles.item_wrapper}>
+      <div className="main_layout-img">
+        <img width={370} height={466} src={image} alt="" />
+      </div>
+      <div className={styles.card_description}>
+        <h4>{title}</h4>
+        <p>{price}</p>
+      </div>
     </div>
   );
 };
